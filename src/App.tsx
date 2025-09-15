@@ -239,11 +239,7 @@ export default function UFHLengthCalculator() {
                 <span className="text-sm text-neutral-600">Допустимый Δp на контур, кПа</span>
                 <input type="number" inputMode="decimal" step="any" value={inputs.dpMaxKPa} onChange={e=>inputs.setDpMaxKPa(parseFloat(e.target.value))} className="input" />
               </label>
-              <label className="flex flex-col gap-1">
-                <span className="text-sm text-neutral-600">Длина подводящих (сумма подача+обратка), м</span>
-                <input type="number" inputMode="decimal" step="any" value={inputs.feedLen} onChange={e=>inputs.setFeedLen(parseFloat(e.target.value))} className="input" />
-                <span className="text-xs text-neutral-500">В тепловом балансе не участвуют, увеличивают только гидросопротивление.</span>
-              </label>
+              
             </div>
             <div className="mt-6 border-t pt-4">
               <h3 className="text-md font-semibold mb-2">Жидкость и свойства</h3>
