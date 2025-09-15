@@ -383,7 +383,7 @@ export default function UFHLengthCalculator() {
                     <td className="py-2 pr-4">{number(r.v, 3)}</td>
                     <td className="py-2 pr-4">{number(r.Re, 0)}</td>
                     <td className="py-2 pr-4">{number(r.dp, 2)}</td>
-                    <td className="py-2 pr-4">{r.limited === 'hydraulic' ? 'гидравлика' : (r.limited === 'montage' ? 'монтаж' : 'тепло')}</td>
+                    <td className="py-2 pr-4">{r.limited === 'hydraulic' ? 'гидравлика' : 'тепло'}</td>
                   </tr>
                 ))}
               </tbody>
