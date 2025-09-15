@@ -103,7 +103,9 @@ function useUFHCalculator() {
     };
 
     if (pPerM <= 0) {
-      return { Dmm, Lloop: 0, Qlh: 0, P: 0, area: 0, v: 0, Re: 0, dp: 0, limited: 'heat' as const };
+      const Lloop = 0;
+      const Q = 0;
+      return { Dmm, Lloop, Ltotal: Lloop + feedLen, Qlh: 0, P: 0, Pfeed, Ptotal: Pfeed, qFeedPerM, area: 0, v: 0, Re: 0, dp: 0, limited: 'heat' as const };
     }
 
     let Llo = 0;
@@ -121,7 +123,7 @@ function useUFHCalculator() {
     }
 
     let Lloop = Math.min(Lhi, maxSearch);
-    const limited = 'hydraulic' as const;
+    const limited: 'hydraulic' = 'hydraulic';
     const P = pPerM * Lloop; // мощность пола
     const Ptotal = P + Pfeed; // суммарная мощность с потерями на подводящих
     const Q = Ptotal / (fluidProps.rho * fluidProps.cp * dT);
