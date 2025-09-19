@@ -158,23 +158,23 @@ export default function UFHLengthCalculator() {
   return (
     <div className="min-h-screen w-full bg-neutral-50 text-neutral-900 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-        <header className="mb-6 flex items-center justify-between">
-          <div className="flex items-center gap-[100px]">
+        <header className="mb-6">
+          <div className="flex items-center justify-between">
             <img src={logoUrl} alt="logo" className="h-8 md:h-10 w-auto object-contain" />
-            <h1 className="text-2xl md:text-3xl font-bold">Тёплый пол · длина контура</h1>
+            <a
+              href="https://t.me/galfdesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 hover:text-neutral-900 transition-colors p-2 rounded-full hover:bg-neutral-100"
+              aria-label="Galf Design Telegram"
+              title="Galf Design Telegram"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M9.036 15.804l-.376 5.296c.537 0 .769-.231 1.048-.508l2.516-2.416 5.213 3.829c.955.527 1.633.25 1.895-.883l3.434-16.115h.001c.306-1.43-.517-1.986-1.452-1.64L1.12 9.27c-1.408.548-1.386 1.334-.24 1.69l5.27 1.644L19.79 6.19c.595-.39 1.136-.174.69.216"></path>
+              </svg>
+            </a>
           </div>
-          <a
-            href="https://t.me/galfdesign"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-neutral-900 transition-colors p-2 rounded-full hover:bg-neutral-100"
-            aria-label="Galf Design Telegram"
-            title="Galf Design Telegram"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-              <path d="M9.036 15.804l-.376 5.296c.537 0 .769-.231 1.048-.508l2.516-2.416 5.213 3.829c.955.527 1.633.25 1.895-.883l3.434-16.115h.001c.306-1.43-.517-1.986-1.452-1.64L1.12 9.27c-1.408.548-1.386 1.334-.24 1.69l5.27 1.644L19.79 6.19c.595-.39 1.136-.174.69.216"></path>
-            </svg>
-          </a>
+          <h1 className="mt-3 text-2xl md:text-3xl font-bold text-center">Тёплый пол · длина контура</h1>
         </header>
 
         <div className="grid md:grid-cols-2 gap-6">
