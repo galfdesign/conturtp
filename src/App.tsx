@@ -105,7 +105,7 @@ function useUFHCalculator() {
     if (pPerM <= 0) {
       const Lloop = 0;
       const Q = 0;
-      return { Dmm, Lloop, Ltotal: Lloop + feedLen, Qlh: 0, P: 0, Pfeed, Ptotal: Pfeed, qFeedPerM, area: 0, v: 0, Re: 0, dp: 0, limited: 'heat' as const };
+      return { Dmm, Lloop, Ltotal: Lloop + feedLen, Qlm: 0, P: 0, Pfeed, Ptotal: Pfeed, qFeedPerM, area: 0, v: 0, Re: 0, dp: 0, limited: 'heat' as const };
     }
 
     let Llo = 0;
@@ -133,7 +133,7 @@ function useUFHCalculator() {
     const dpKPa = dpForL(Lloop) / 1000;
     const Ltotal = Lloop + feedLen;
 
-    return { Dmm, Lloop, Ltotal, Qlh: Q * 3600 * 1000, P, Pfeed, Ptotal, qFeedPerM, area: Lloop * s, v, Re, dp: dpKPa, limited } as const;
+    return { Dmm, Lloop, Ltotal, Qlm: Q * 60 * 1000, P, Pfeed, Ptotal, qFeedPerM, area: Lloop * s, v, Re, dp: dpKPa, limited } as const;
   }
 
   const results = useMemo(() => {
@@ -354,7 +354,7 @@ export default function UFHLengthCalculator() {
                   <th className="py-2 pr-4">D<sub>вн</sub>, мм</th>
                   <th className="py-2 pr-4">L<sub>контур</sub>, м</th>
                   <th className="py-2 pr-4">L<sub>общ</sub>, м</th>
-                  <th className="py-2 pr-4">Расход, л/ч</th>
+                  <th className="py-2 pr-4">Расход, л/мин</th>
                   <th className="py-2 pr-4">P контура, Вт</th>
                   <th className="py-2 pr-4">Площадь, м²</th>
                   <th className="py-2 pr-4">Pподв, Вт</th>
@@ -371,7 +371,7 @@ export default function UFHLengthCalculator() {
                     <td className="py-2 pr-4 font-medium">{r.Dmm}</td>
                     <td className="py-2 pr-4">{number(r.Lloop, 1)}</td>
                     <td className="py-2 pr-4">{number(r.Ltotal, 1)}</td>
-                    <td className="py-2 pr-4">{number(r.Qlh, 0)}</td>
+                    <td className="py-2 pr-4">{number(r.Qlm, 2)}</td>
                     <td className="py-2 pr-4">{number(r.P, 0)}</td>
                     <td className="py-2 pr-4">{number(r.area, 2)}</td>
                     <td className="py-2 pr-4">{number(r.Pfeed ?? 0, 0)}</td>
